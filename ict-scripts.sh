@@ -62,7 +62,7 @@ main_menu() {
     echo -e "[ ${YELLOW}- 13 -${NC} ] ${BLUE}Changer${NC} la ${BLUE}passphrase d'encryption${NC} du disque"
     echo -e "[ ${YELLOW}- 14 -${NC} ] ${BLUE}Ajouter${NC} une ${BLUE}YubiKey${NC} pour l'authentification du compte"
     echo -e "[ ${YELLOW}- 15 -${NC} ] ${BLUE}Supprimer${NC} l'authentification par ${BLUE}YubiKey${NC}"
-    echo -e "[ ${YELLOW}- 15 -${NC} ] ${BLUE}Afficher${NC} les informations du ${BLUE}files systems${NC}"
+    echo -e "[ ${YELLOW}- 16 -${NC} ] ${BLUE}Afficher${NC} les informations du ${BLUE}files systems${NC}"
     echo -e ""
 
     # Lire le choix de l'utilisateur
