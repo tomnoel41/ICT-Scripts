@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 update() {
     clear
     echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Lancement de l'installation des mises à jours de l'ordinateur..."

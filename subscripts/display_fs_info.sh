@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 display_fs_info() {
     clear
     echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Affichage des informations file system en cours..."

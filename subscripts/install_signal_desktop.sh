@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 install_signal_desktop() {
     if dpkg -s "signal-desktop" >/dev/null 2>&1; then
         clear

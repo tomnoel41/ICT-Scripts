@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 create_ict_user() {
     clear
     username="ict"
