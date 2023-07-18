@@ -3,7 +3,7 @@
 
 set_wallpaper() {
   local wallpaper_dir="files"
-  local wallpaper_file="wallpaper.png"
+  local wallpaper_file="background.jpg"
 
   clear
   echo -e "${NC}[${RED}ICT Ubuntu Script${NC}] -> Lancement de l'application du nouveau fond d'écran..."
