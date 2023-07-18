@@ -1,5 +1,7 @@
 # ICT Scripts
 
+![image](https://github.com/tomnoel41/ICT-Scripts/assets/98286538/1403bae7-2974-4cb7-9623-079d8e381b06)
+
 Ce script est conçu pour automatiser diverses tâches liées à l'informatique et à l'administration système. Il propose un menu interactif permettant de choisir parmi plusieurs options d'installation, de configuration et de gestion du système pour la gestion de déploiement d'ordinateurs Linux dans un parc informatique.
 
 ## Fonctionnalités
