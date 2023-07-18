@@ -8,7 +8,7 @@ YELLOW='\e[93m'
 BLUE='\e[34m'
 NC='\033[0m' # Couleur par défaut
 
-VER='0.0.1'
+VER='0.0.2'
 
 # Vérification des dépendances et mises à jour
 if ! command -v sudo &> /dev/null; then
