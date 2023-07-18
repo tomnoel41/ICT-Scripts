@@ -4,56 +4,43 @@
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 RED2='\033[1;31m' # Rouge clair
+YELLOW='\e[93m'
+BLUE='\e[34m'
 NC='\033[0m' # Couleur par défaut
 
 # Menu principal
 main_menu() {
     clear
-
-    echo -e "${RED}"
-
-    echo "  ___ ___ _____   _   _ _             _          ___         _      _   "
-    echo " |_ _/ __|_   _| | | | | |__ _  _ _ _| |_ _  _  / __| __ _ _(_)_ __| |_ "
-    echo "  | | (__  | |   | |_| | '_ \ || | ' \  _| || | \__ \/ _| '_| | '_ \  _|"
-    echo " |___\___| |_|    \___/|_.__/\_,_|_||_\__|\_,_| |___/\__|_| |_| .__/\__|"
+    echo -e "${BLUE}"
+    echo -e "########################################################################################################################"
+    echo -e "###################################################### ${YELLOW}ICT Scripts ${BLUE}#####################################################"
+    echo -e "########################################################################################################################"
     echo -e "${NC}"
+    # Afficher les options du menu principal
+    echo -e "${YELLOW}Mises à jour / Installation${NC}"
+    echo -e "[ ${YELLOW}- 1 -${NC} ] Mettre à jour l'ordinateur complètement\t\t[ ${YELLOW}- 2 -${NC} ] Installer ${BLUE}Signal${NC}"
+    echo -e "[ ${YELLOW}- 3 -${NC} ] Installer ${BLUE}Bitwarden${NC}\t\t\t\t\t[ ${YELLOW}- 4 -${NC} ] Installer ${BLUE}Chrome${NC}"
+    echo -e "[ ${YELLOW}- 5 -${NC} ] Installer ${BLUE}Spotify${NC}\t\t\t\t\t[ ${YELLOW}- 6 -${NC} ] Installer ${BLUE}Remmina${NC}"
+    echo -e "[ ${YELLOW}- 7 -${NC} ] Installer ${BLUE}TeamViewer${NC}\t\t\t\t\t[ ${YELLOW}- * -${NC} ] Préparer l'ordinateur pour un utilisateur (all)"
 
-    echo -e "========================= ${RED2}Mises à jours / Installation ${NC}========================"
-
-    echo -e "[ ${RED}- 1 -${NC} ] Mettre à jour l'ordinateur complètement"
-    echo -e "[ ${RED}- 2 -${NC} ] Installer ${RED2}Signal${NC} (Discussions)"
-    echo -e "[ ${RED}- 3 -${NC} ] Installer ${RED2}Bitwarden${NC} (Gestionnaire de mot de passe)"
-    echo -e "[ ${RED}- 4 -${NC} ] Installer ${RED2}Chrome${NC} (Navigateur)"
-    echo -e "[ ${RED}- 5 -${NC} ] Installer ${RED2}Spotify${NC} (Musique)"
-    echo -e "[ ${RED}- 6 -${NC} ] Installer ${RED2}Remmina${NC} (Remote Desktop Client)"
-    echo -e "[ ${RED}- 7 -${NC} ] Installer ${RED2}TeamViewer${NC} (Outil d'aide à distance)"
-    echo -e "[ ${RED}- * -${NC} ] Préparer l'ordinateur pour un utilisateur (all)"
-
-    echo -e "============================ ${RED2}Informations systèmes ${NC}============================"
-
-    echo -e "[ ${RED}- 8 -${NC} ] Afficher les informations du files systems"
-
-    echo -e "============================= ${RED2}Utilisateurs / ICT ${NC}=============================="
-
-    echo -e "[ ${RED}- 9 -${NC} ] Créer un utilisateur sur le système"
-    echo -e "[ ${RED}- 10 -${NC} ] Créer un compte ICT (administrateur) sur le système"
-    echo -e "[ ${RED}- 11 -${NC} ] Changer le nom d'utilisateur d'un compte"
-    echo -e "[ ${RED}- 12 -${NC} ] Supprimer un utilisateur du système"
-    echo -e "[ ${RED}- 13 -${NC} ] Changer de fond d'écran"
-
-    echo -e "============================= ${RED2}Encryption / Disque ${NC}============================="
-
-    echo -e "[ ${RED}- 14 -${NC} ] Changer la passphrase d'encryption du disque"
-    echo -e "[ ${RED}- 15 -${NC} ] ${RED2}Ajouter${NC} une ${RED2}YubiKey${NC} pour l'authentification du compte"
-    echo -e "[ ${RED}- 16 -${NC} ] ${RED2}Supprimer${NC} l'authentification par ${RED2}YubiKey${NC}"
     echo -e ""
-    echo -e "[ ${RED}- 0 -${NC} ] ${RED2}Quitter${NC} l'utilitaire"
+    echo -e "${YELLOW}Utilisateurs / ICT${NC}"
+    echo -e "[ ${YELLOW}- 8 -${NC} ] ${BLUE}Créer${NC} un ${BLUE}utilisateur${NC} sur le système\t\t\t[ ${YELLOW}- 9 -${NC} ] Créer un compte ${BLUE}ICT${NC}"
+    echo -e "[ ${YELLOW}- 10 -${NC} ] ${BLUE}Changer${NC} le ${BLUE}nom d'utilisateur${NC} d'un compte\t\t[ ${YELLOW}- 11 -${NC} ] ${BLUE}Supprimer${NC} un ${BLUE}utilisateur${NC}"
+    echo -e "[ ${YELLOW}- 12 -${NC} ] Appliquer un ${BLUE}fond d'écran${NC} général"
+
     echo -e ""
-    read -p "$(echo -e "${NC}[${RED}ICT Ubuntu Script${NC}] -> Choisissez une option à exécuter : ")" -e choice
+    echo -e "${YELLOW}Encryption / Disque${NC}"
+    echo -e "[ ${YELLOW}- 13 -${NC} ] ${BLUE}Changer${NC} la ${BLUE}passphrase d'encryption${NC} du disque"
+    echo -e "[ ${YELLOW}- 14 -${NC} ] ${BLUE}Ajouter${NC} une ${BLUE}YubiKey${NC} pour l'authentification du compte"
+    echo -e "[ ${YELLOW}- 15 -${NC} ] ${BLUE}Supprimer${NC} l'authentification par ${BLUE}YubiKey${NC}"
+    echo -e "[ ${YELLOW}- 15 -${NC} ] ${BLUE}Afficher${NC} les informations du ${BLUE}files systems${NC}"
+    echo -e ""
+
+    # Lire le choix de l'utilisateur
+    read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Choisissez une option à exécuter : ")" -e choice
     
     case $choice in
-        0)
-            exit;;
         1)
             source subscripts/update.sh;;
         2)
@@ -69,25 +56,25 @@ main_menu() {
         7)
             source subscripts/install_teamviewer.sh;;
         8)
-            source subscripts/display_fs_info.sh;;
-        9)
             source subscripts/create_user.sh;;
-        10)
+        9)
             source subscripts/create_ict_user.sh;;
-        11)
+        10)
             source subscripts/rename_user.sh;;
-        12)
+        11)
             source subscripts/delete_user.sh;;
-        13)
+        12)
             source subscripts/set_wallpaper.sh;;
-        14)
+        13)
             source subscripts/change_encryption_passphrase.sh;;
-        15)
+        14)
             source subscripts/add_yubikey_auth.sh;;
-        16)
+        15)
             source subscripts/remove_yubikey_auth.sh;;
+        16)
+            source subscripts/display_fs_info.sh;;
         *)
-            echo -e "${NC}[${RED}ICT Ubuntu Script${NC}] -> Option invalide. Veuillez réessayer.${NC}"
+            echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Option invalide. Veuillez réessayer.${NC}"
             sleep 2
             main_menu
             ;;
