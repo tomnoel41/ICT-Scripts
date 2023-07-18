@@ -39,12 +39,13 @@ main_menu() {
     echo -e "[ ${RED}- 10 -${NC} ] Créer un compte ICT (administrateur) sur le système"
     echo -e "[ ${RED}- 11 -${NC} ] Changer le nom d'utilisateur d'un compte"
     echo -e "[ ${RED}- 12 -${NC} ] Supprimer un utilisateur du système"
+    echo -e "[ ${RED}- 13 -${NC} ] Changer de fond d'écran"
 
     echo -e "============================= ${RED2}Encryption / Disque ${NC}============================="
 
-    echo -e "[ ${RED}- 13 -${NC} ] Changer la passphrase d'encryption du disque"
-    echo -e "[ ${RED}- 14 -${NC} ] ${RED2}Ajouter${NC} une ${RED2}YubiKey${NC} pour l'authentification du compte"
-    echo -e "[ ${RED}- 15 -${NC} ] ${RED2}Supprimer${NC} l'authentification par ${RED2}YubiKey${NC}"
+    echo -e "[ ${RED}- 14 -${NC} ] Changer la passphrase d'encryption du disque"
+    echo -e "[ ${RED}- 15 -${NC} ] ${RED2}Ajouter${NC} une ${RED2}YubiKey${NC} pour l'authentification du compte"
+    echo -e "[ ${RED}- 16 -${NC} ] ${RED2}Supprimer${NC} l'authentification par ${RED2}YubiKey${NC}"
     echo -e ""
     echo -e "[ ${RED}- 0 -${NC} ] ${RED2}Quitter${NC} l'utilitaire"
     echo -e ""
@@ -78,10 +79,12 @@ main_menu() {
         12)
             source subscripts/delete_user.sh;;
         13)
-            source subscripts/change_encryption_passphrase.sh;;
+            source subscripts/set_wallpaper.sh;;
         14)
-            source subscripts/add_yubikey_auth.sh;;
+            source subscripts/change_encryption_passphrase.sh;;
         15)
+            source subscripts/add_yubikey_auth.sh;;
+        16)
             source subscripts/remove_yubikey_auth.sh;;
         *)
             echo -e "${NC}[${RED}ICT Ubuntu Script${NC}] -> Option invalide. Veuillez réessayer.${NC}"
