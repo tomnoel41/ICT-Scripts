@@ -28,7 +28,7 @@ Ce script est conçu pour automatiser diverses tâches liées à l'informatique 
 | Operating System | Supported          |
 | ---------------- | ------------------ |
 | Ubuntu           | :white_check_mark: |
-| Debian           | :white_check_mark  |
+| Debian           | :white_check_mark:  |
 
 ## Utilisation
 
