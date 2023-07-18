@@ -3,12 +3,12 @@
 
 install_spotify() {
     clear
-    echo -e "${NC}[${RED}ICT Ubuntu Script${NC}] -> Lancement de l'installation de Spotify..."
+    echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Lancement de l'installation de Spotify..."
     sleep 2
     clear
     if dpkg -s "spotify-client" >/dev/null 2>&1; then
         clear
-        read -p "$(echo -e "${NC}[${RED}ICT Ubuntu Script${NC}] -> Spotify est déjà installé sur l'ordinateur, \nAppuyez sur Enter pour retourner à l'accueil")" -e
+        read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Spotify est déjà installé sur l'ordinateur, \nAppuyez sur Enter pour retourner à l'accueil")" -e
         main_menu
     else
         # Ajout de la clé GPG de Spotify
@@ -23,7 +23,7 @@ install_spotify() {
         # Installation de Spotify
         sudo apt install spotify-client -y
         clear 
-        read -p "$(echo -e "${NC}[${RED}ICT Ubuntu Script${NC}] -> Installation de Spotify terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
+        read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Installation de Spotify terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
         main_menu
     fi
 }

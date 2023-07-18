@@ -8,12 +8,39 @@ YELLOW='\e[93m'
 BLUE='\e[34m'
 NC='\033[0m' # Couleur par défaut
 
+VER='0.0.1'
+
+# Vérification des dépendances et mises à jour
+if ! command -v sudo &> /dev/null; then
+    clear
+    echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Sudo n'est pas installé, installation en cours..."
+    sleep 2
+    apt update -y
+    apt install sudo -y
+fi
+if ! command -v curl &> /dev/null; then
+    clear
+    echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Curl n'est pas installé, installation en cours..."
+    sleep 2
+    sudo apt update
+    apt install curl -y
+fi
+clear
+echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Vérficiations des mises à jours du script (actuellement : v$VER)..."
+latest_version=$(curl -s https://raw.githubusercontent.com/tomnoel41/ICT-Scripts/main/last_version.txt)
+if [[ "$latest_version" != "$VER" ]]; then
+   clear
+   echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Attention, une nouvelle version est disponible (nouvelle : v$latest_version)..."
+   sleep 5
+fi
+
+
 # Menu principal
 main_menu() {
     clear
     echo -e "${BLUE}"
     echo -e "########################################################################################################################"
-    echo -e "###################################################### ${YELLOW}ICT Scripts ${BLUE}#####################################################"
+    echo -e "#################################################### ${YELLOW}ICT Scripts ${RED2}BETA ${BLUE}##################################################"
     echo -e "########################################################################################################################"
     echo -e "${NC}"
     # Afficher les options du menu principal
