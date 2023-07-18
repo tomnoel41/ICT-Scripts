@@ -6,7 +6,7 @@ set_wallpaper() {
   local wallpaper_file="background.jpg"
 
   clear
-  echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Lancement de l'application du nouveau fond d'écran..."
+  echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Lancement de l'application du nouveau fond d'écran..."
   sleep 2
   clear
   
@@ -14,14 +14,14 @@ set_wallpaper() {
   if [ ! -d "$wallpaper_dir" ]; then
     clear
     mkdir $wallpaper_dir
-    read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Le dossier 'files' n'est pas présent, \nAppuyez sur Enter pour réessayer")" -e
+    read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Le dossier 'files' n'est pas présent, \nAppuyez sur Enter pour réessayer")" -e
     set_wallpaper
   fi
   
   # Vérifier si le fichier de fond d'écran existe dans le dossier "files"
   if [ ! -f "$wallpaper_dir/$wallpaper_file" ]; then
     clear 
-    read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Le fichier '$wallpaper_file' n'éxiste pas dans le dossier '$wallpaper_dir', \nAppuyez sur Enter pour retourner à l'accueil")" -e
+    read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Le fichier '$wallpaper_file' n'éxiste pas dans le dossier '$wallpaper_dir', \nAppuyez sur Enter pour retourner à l'accueil")" -e
     main_menu
   fi
   
@@ -29,7 +29,7 @@ set_wallpaper() {
   gsettings set org.gnome.desktop.background picture-uri "file://$PWD/$wallpaper_dir/$wallpaper_file"
   
   clear 
-  read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Application du nouveau fond d'écran terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
+  read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Application du nouveau fond d'écran terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
   main_menu
 }
 

@@ -13,24 +13,25 @@ VER='0.0.1'
 # Vérification des dépendances et mises à jour
 if ! command -v sudo &> /dev/null; then
     clear
-    echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Sudo n'est pas installé, installation en cours..."
+    echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Sudo n'est pas installé, installation en cours..."
     sleep 2
     apt update -y
     apt install sudo -y
 fi
 if ! command -v curl &> /dev/null; then
     clear
-    echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Curl n'est pas installé, installation en cours..."
+    echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Curl n'est pas installé, installation en cours..."
     sleep 2
     sudo apt update
     apt install curl -y
 fi
 clear
-echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Vérficiations des mises à jours du script (actuellement : v$VER)..."
+echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Vérficiations des mises à jours du script (actuellement : v$VER)..."
 latest_version=$(curl -s https://raw.githubusercontent.com/tomnoel41/ICT-Scripts/main/last_version.txt)
+sleep 2
 if [[ "$latest_version" != "$VER" ]]; then
    clear
-   echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Attention, une nouvelle version est disponible (nouvelle : v$latest_version)..."
+   echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Attention, une nouvelle version est disponible (nouvelle : v$latest_version)..."
    sleep 5
 fi
 
@@ -40,7 +41,7 @@ main_menu() {
     clear
     echo -e "${BLUE}"
     echo -e "########################################################################################################################"
-    echo -e "#################################################### ${YELLOW}ICT Scripts ${RED2}BETA ${BLUE}##################################################"
+    echo -e "################################################# ${YELLOW}ICT Scripts ${RED2}BETA v$VER${BLUE} ##############################################"
     echo -e "########################################################################################################################"
     echo -e "${NC}"
     # Afficher les options du menu principal
@@ -65,7 +66,7 @@ main_menu() {
     echo -e ""
 
     # Lire le choix de l'utilisateur
-    read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Choisissez une option à exécuter : ")" -e choice
+    read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Choisissez une option à exécuter : ")" -e choice
     
     case $choice in
         1)
@@ -101,7 +102,7 @@ main_menu() {
         16)
             source subscripts/display_fs_info.sh;;
         *)
-            echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Option invalide. Veuillez réessayer.${NC}"
+            echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Option invalide. Veuillez réessayer.${NC}"
             sleep 2
             main_menu
             ;;

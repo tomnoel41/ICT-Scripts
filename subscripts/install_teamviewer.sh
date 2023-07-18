@@ -3,12 +3,12 @@
 
 install_teamviewer() {
     clear
-    echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Lancement de l'installation de TeamViewer..."
+    echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Lancement de l'installation de TeamViewer..."
     sleep 2
     clear
     if dpkg -s "teamviewer" >/dev/null 2>&1; then
         clear
-        read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> TeamViewer est déjà installé sur l'ordinateur, \nAppuyez sur Enter pour retourner à l'accueil")" -e
+        read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> TeamViewer est déjà installé sur l'ordinateur, \nAppuyez sur Enter pour retourner à l'accueil")" -e
         main_menu
     else
         # Téléchargement du paquet d'installation de TeamViewer
@@ -24,7 +24,7 @@ install_teamviewer() {
         rm teamviewer_amd64.deb
 
         clear 
-        read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Installation de TeamViewer terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
+        read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Installation de TeamViewer terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
         main_menu
     fi
 }

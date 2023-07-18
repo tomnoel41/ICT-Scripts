@@ -3,12 +3,12 @@
 
 install_chrome() {
     clear
-    echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Lancement de l'installation de Google Chrome..."
+    echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Lancement de l'installation de Google Chrome..."
     sleep 2
     clear
     if dpkg -s "google-chrome-stable" >/dev/null 2>&1; then
         clear
-        read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Google Chrome est déjà installé sur l'ordinateur, \nAppuyez sur Enter pour retourner à l'accueil")" -e
+        read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Google Chrome est déjà installé sur l'ordinateur, \nAppuyez sur Enter pour retourner à l'accueil")" -e
         main_menu
     else
         # Téléchargement du paquet d'installation de Google Chrome
@@ -24,7 +24,7 @@ install_chrome() {
         rm google-chrome-stable_current_amd64.deb
 
         clear 
-        read -p "$(echo -e "${NC}[${YELLOW}ICT Ubuntu Script${NC}] -> Installation de Google Chrome terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
+        read -p "$(echo -e "${NC}[${YELLOW}ICT Scripts${NC}] -> Installation de Google Chrome terminée, \nAppuyez sur Enter pour retourner à l'accueil")" -e
         main_menu
     fi
 }
